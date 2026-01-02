@@ -1,6 +1,5 @@
 import 'package:bloc_state/bloc/counter_bloc.dart';
-import 'package:bloc_state/screens/counter_screen.dart';
-import 'package:bloc_state/test.dart';
+import 'package:bloc_state/tomtom_map.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,10 +33,10 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MultiBlocProvider(providers: [
-        BlocProvider(create: (context)=>CounterBloc())
-      ],
-       child: TomTomMapScreen())
+      home: MultiBlocProvider(
+        providers: [BlocProvider(create: (context) => CounterBloc())],
+        child: TomTomMap(),
+      ),
     );
   }
 }
